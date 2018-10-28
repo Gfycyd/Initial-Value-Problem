@@ -1,0 +1,95 @@
+#:kivy 1.1.0
+#: import sm kivy.uix.screenmanager
+
+<InputScreen>:
+    name: "input"
+    inp_x0 : inp_x0
+    inp_y0 : inp_y0
+    inp_n : inp_n
+    inp_xn : inp_xn
+    btn1 : btn1
+    GridLayout:
+        cols : 2
+
+        Label:
+            text : "Enter x0:"
+        TextInput:
+            id : inp_x0
+
+        Label:
+            text : "Enter y0:"
+        TextInput:
+            id : inp_y0
+
+        Label:
+            text : "Enter n:"
+        TextInput:
+            id: inp_n
+
+        Label:
+            text : "Enter xn:"
+        TextInput:
+            id: inp_xn
+
+        Button:
+            text: "Solve Initial Value Problem!"
+            id: btn1
+            on_release:
+
+
+
+<PlotScreen>
+    name: "Plot"
+    small_box : small_box
+    main_box : main_box
+    back : back
+    BoxLayout:
+        orientation : "vertical"
+        id : main_box
+
+        BoxLayout:
+            orientation : "horizontal"
+            size_hint : 1, 0.2
+
+            Button:
+                id : back
+                text: "Back!"
+                on_release:
+                    app.root.transition = sm.SlideTransition(direction='right')
+                    app.root.current = "input"
+
+            Button:
+                text: "Check errors graphs"
+                on_release:
+                    app.root.transition = sm.SlideTransition(direction='left')
+                    app.root.current = "error"
+
+        BoxLayout:
+            orientation : "horizontal"
+            id : small_box
+
+
+<ErrorScreen>
+    name: "error"
+    main_box : main_box
+    small_box : small_box
+    BoxLayout:
+        id : main_box
+        orientation : "vertical"
+        BoxLayout:
+            orientation : "horizontal"
+            size_hint : 1, 0.2
+            id : small_box
+
+            Button:
+                text: "Back!"
+                on_release:
+                    app.root.transition = sm.SlideTransition(direction='right')
+                    app.root.current = "Plot"
+
+        BoxLayout:
+            orientation : "horizontal"
+            id : small_box
+
+
+
