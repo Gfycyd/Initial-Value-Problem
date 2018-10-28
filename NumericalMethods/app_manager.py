@@ -73,7 +73,7 @@ class GraphsBuilder:
 
     def global_error_graph(self) -> plt.figure:
         """
-        Plot global error graph
+        Plot global error graph.
         """
         plt.close(3)
         plt.figure(3)
