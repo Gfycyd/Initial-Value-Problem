@@ -65,7 +65,7 @@ class InputScreen(sp.Screen):
             self.inp_x0.text, self.inp_y0.text, self.inp_n.text, self.inp_xn.text = ['WRONG DATA' for i in range(4)]
 
     def validate_data(self, arr):
-        if float(self.inp_x0.text) > float(self.inp_xn.text) or float(self.inp_n.text) <= 10:
+        if float(self.inp_x0.text) > float(self.inp_xn.text) or float(self.inp_n.text) <= 10 or float(self.inp_y0.text) == 0:
             return False
 
         return True

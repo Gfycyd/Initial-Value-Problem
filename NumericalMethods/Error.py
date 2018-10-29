@@ -23,8 +23,8 @@ class ErrorCalculator:
         :param xn: xn
         :return: global error data
         """
-        x = [i for i in range(20, 100, 1)]
-        y = [i for i in range(20, 100, 1)]
+        x = [i for i in range(20, 50, 1)]
+        y = [i for i in range(20, 50, 1)]
         for i in range(len(x)):
             exact = IVPsolver(x0, y0, x[i], xn)
             exact.solve('exact')

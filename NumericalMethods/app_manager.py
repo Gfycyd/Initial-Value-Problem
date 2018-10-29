@@ -79,7 +79,7 @@ class GraphsBuilder:
         plt.figure(3)
         plt.ylabel('Global error')
         plt.xlabel('N')
-        x = [i for i in range(20, 100, 1)]
+        x = [i for i in range(20, 50, 1)]
         eiler = e.global_error('eiler', self.x0, self.y0, self.xn)
         impr_eiler = e.global_error('impr_eiler', self.x0, self.y0, self.xn)
         runge_kutta = e.global_error('runge_kutta', self.x0, self.y0, self.xn)
