@@ -37,6 +37,8 @@ class ErrorCalculator:
             for j in errors:
                 global_errors.append(max(j))
 
+
+
             y[i] = max(global_errors)
 
         return y
